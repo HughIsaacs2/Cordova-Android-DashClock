@@ -21,7 +21,7 @@ public class MyDashClockExtension extends DashClockExtension {
                 .status("Acrylic Style")
                 .expandedTitle("Acrylic Style Dot Com")
                 .expandedBody("Go to our site")
-				.contentDescription("Go to AcrylicStyle.com")
+				//.contentDescription("Go to AcrylicStyle.com")
                 .clickIntent(new Intent(Intent.ACTION_VIEW, Uri.parse("http://acrylicstyle.com/"))));
     }
 }
