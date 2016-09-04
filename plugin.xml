@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.hughisaacs2.cordova.plugins.androiddashclockplugin"
+    version="0.0.1">
+	
+	<name>AndroidDashClockPlugin</name>
+    <description>Cordova Android DashClock Plugin</description>
+	<author email="hughisaacs@acrylicstyle.com" href="http://hughisaacs2.acrylicstyle.com">Hugh Isaacs II</author>
+    <license>MIT</license>
+	<keywords>ecosystem:cordova,cordova-android</keywords>
+	
+  <engines>
+    <engine name="cordova" version=">=3.0.0" />
+  </engines>
+
+  <platform name="android">
+	
+	<config-file target="AndroidManifest.xml" parent="/manifest/application">
+	
+		<service android:name="com.hughisaacs2.cordova.plugins.androiddashclockplugin.MyDashClockExtension"
+            android:icon="@drawable/icon"
+            android:label="@string/extension_title"
+            android:permission="com.google.android.apps.dashclock.permission.READ_EXTENSION_DATA">
+            <intent-filter>
+                <action android:name="com.google.android.apps.dashclock.Extension" />
+            </intent-filter>
+            <meta-data android:name="protocolVersion" android:value="2" />
+            <meta-data android:name="worldReadable" android:value="true" />
+            <meta-data android:name="description"
+                android:value="@string/extension_description" />
+            <meta-data android:name="settingsActivity"
+                android:value=".ExampleSettingsActivity" />
+        </service>
+	
+    </config-file>
+    
+    <source-file src="MyDashClockExtension.java" target-dir="src/com/hughisaacs2/cordova/plugins/androiddashclockplugin" />
+
+  </platform>
+</plugin>
